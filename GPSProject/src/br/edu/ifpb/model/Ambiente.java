@@ -10,6 +10,14 @@ public class Ambiente {
 	private Location location;
 	private Date date;
 	private Double raio;
+	private String perfil;
+	
+	public String getPerfil() {
+		return perfil;
+	}
+	public void setPerfil(String perfil) {
+		this.perfil = perfil;
+	}
 	public int getId() {
 		return id;
 	}

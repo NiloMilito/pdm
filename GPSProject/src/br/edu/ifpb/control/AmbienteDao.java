@@ -15,8 +15,8 @@ import android.location.Location;
 
 public class AmbienteDao {
 	private SQLiteDatabase database;
-	private String[] columns = { Banco.COLUMN_ID , Banco.COLUMN_NOME, 
-			Banco.COLUMN_DATE, Banco.COLUMN_LATITUDE, Banco.COLUMN_LONGITUDE};
+	private String[] columns = { Banco.COLUMN_ID , Banco.COLUMN_NOME, Banco.COLUMN_LATITUDE, 
+			Banco.COLUMN_LONGITUDE, Banco.COLUMN_DATE,Banco.COLUMN_RAIO, Banco.COLUMN_PERFIL};
 	private Banco banco;
 	
 	public AmbienteDao(Context context){
@@ -38,24 +38,25 @@ public class AmbienteDao {
 		 
 		 long insertId = database.insert(Banco.TABLE_AMBIENTE , null,values);
 		 Cursor cursor = database.query(Banco.TABLE_AMBIENTE,columns , 
-			Banco.COLUMN_ID + " = " + insertId , null,null, null, null);
+			Banco.COLUMN_ID + " = " + insertId , null,null, null, null,null);
 		 
 		 cursor.moveToFirst();
-		 
-		 Ambiente ambient = new Ambiente();
-		 ambient.setId(cursor.getInt(0));
-		 ambient.setNome(cursor.getString(1));
+		 		
+		 ambiente.setId(cursor.getInt(0));
+		 ambiente.setNome(cursor.getString(1));
 		 
 		 Location location = new Location("");
 		 location.setLatitude(cursor.getDouble(2));
 		 location.setLongitude(cursor.getDouble(3));
-		 ambient.setLocation(location);
+		 ambiente.setLocation(location);
 		 
 		 Date data = new Date();
 		 data.setTime(cursor.getLong(4));
-		 ambient.setDate(data);
+		 ambiente.setDate(data);
+		 ambiente.setRaio(cursor.getDouble(5));
+		 ambiente.setPerfil(cursor.getString(6));
 		 cursor.close();
-		 	return ambient;
+		 	return ambiente;
 		 }
 	
 	public void delete(Ambiente ambiente) {

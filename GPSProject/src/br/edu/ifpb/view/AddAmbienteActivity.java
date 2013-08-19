@@ -30,12 +30,14 @@ public class AddAmbienteActivity extends Activity{
 		EditText lat = (EditText) findViewById(R.id.editText1);
 		EditText longi = (EditText)findViewById(R.id.editText2);
 		EditText nom = (EditText)findViewById(R.id.editText3);
-		EditText raio = (EditText)findViewById(R.id.seekBar1);
-		EditText perfil = (EditText) findViewById(R.id.spinner_ringtone);
+		EditText r = (EditText)findViewById(R.id.seekBar1);
+		EditText p = (EditText) findViewById(R.id.spinner_ringtone);
 		
 		final String latitude = lat.getEditableText().toString();
 		final String longitude = longi.getEditableText().toString();
 		final String nome = nom.getEditableText().toString();
+		final String raio = r.getEditableText().toString();
+		final String perfil = p.getEditableText().toString();
 		
 		saveButton.setOnClickListener(new OnClickListener() {
 		
@@ -47,6 +49,8 @@ public class AddAmbienteActivity extends Activity{
 			ambiente.setLocation(location);
 			ambiente.setNome(nome);
 			ambiente.setDate(new Date());
+			ambiente.setRaio(Double.valueOf(raio));
+			ambiente.setPerfil(perfil);
 			dao.create(ambiente);	
 			finish();
 		}

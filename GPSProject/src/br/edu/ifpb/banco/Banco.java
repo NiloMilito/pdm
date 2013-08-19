@@ -11,6 +11,8 @@ public class Banco extends SQLiteOpenHelper{
 	public static final String COLUMN_LATITUDE = "latidude";
 	public static final String COLUMN_LONGITUDE = "longitude";
 	public static final String COLUMN_DATE = "data";
+	public static final String COLUMN_RAIO = "raio";
+	public static final String COLUMN_PERFIL = "perfil";
 	
 	private static final String DATABASE_NAME = "ambiente.db";
 	private static final int DATABASE_VERSION = 1;
@@ -21,7 +23,9 @@ public class Banco extends SQLiteOpenHelper{
 			+ COLUMN_NOME +" text not null"
 			+ COLUMN_LATITUDE + " text not null"
 			+ COLUMN_LONGITUDE +"text not null"
-			+ COLUMN_DATE + " text not null);";
+			+ COLUMN_DATE + " text not null" 
+			+ COLUMN_RAIO + "text not null"
+			+COLUMN_PERFIL + ");";
 	
 
 	public Banco(Context context) {
