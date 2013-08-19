@@ -51,7 +51,7 @@
         </activity>
         <activity
             android:name="br.edu.ifpb.control.IniciarServico"
-            android:label="@string/title_activity_iniciar_servico" >
+            android:label="@string/title_activity_main__screen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

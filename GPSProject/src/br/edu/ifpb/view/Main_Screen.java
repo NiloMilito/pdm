@@ -12,13 +12,13 @@ public class Main_Screen extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.screen_layout);
+		setContentView(R.layout.activity_screen_ccadastro);
 	}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
-		getMenuInflater().inflate(R.menu.main__screen, menu);
+		getMenuInflater().inflate(R.menu.screen_ccadastro, menu);
 		return true;
 	}
 

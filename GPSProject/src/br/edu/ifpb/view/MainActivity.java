@@ -26,11 +26,11 @@ public class MainActivity extends Activity implements LocationListener {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_screen_ccadastro);
 
-		latitudetxt = (TextView) findViewById(R.id.latitudetxt);
-		ringtone_mode = (TextView) findViewById(R.id.mode_ringtone);
-		longitudetxt = (TextView) findViewById(R.id.longitudetxt);
+		latitudetxt = (TextView) findViewById(R.id.editText1);
+		ringtone_mode = (TextView) findViewById(R.id.editText3);
+		longitudetxt = (TextView) findViewById(R.id.editText2);
 
 		manager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 		audio_manager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);

@@ -34,7 +34,11 @@ public class AmbienteDao {
 	public Ambiente create(Ambiente ambiente) {
 		 ContentValues values = new ContentValues();
 		 
-		 values.put(Banco.COLUMN_NOME, ambiente.toString());
+		 values.put(Banco.COLUMN_LATITUDE, ambiente.getLocation().getLatitude());
+		 values.put(Banco.COLUMN_LONGITUDE, ambiente.getLocation().getLongitude());;
+		 values.put(Banco.COLUMN_NOME, ambiente.getNome());
+		 values.put(Banco.COLUMN_RAIO, ambiente.getRaio());
+		 values.put(Banco.COLUMN_PERFIL, ambiente.getPerfil());
 		 
 		 long insertId = database.insert(Banco.TABLE_AMBIENTE , null,values);
 		 Cursor cursor = database.query(Banco.TABLE_AMBIENTE,columns , 
