@@ -33,18 +33,20 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </service>
-        
-		<activity
-            android:name="br.edu.ifpb.view.MainActivityBanco"
-            android:label="@string/banco" >
-        </activity>
-         <activity
-            android:name="br.edu.ifpb.view.AddAmbienteActivity"
-            android:label="@string/ambiente" >
-        </activity>
+   		
         <activity
             android:name="br.edu.ifpb.view.MainActivity"
             android:label="@string/app_name" >
+            
+        </activity>
+         <activity
+            android:name="br.edu.ifpb.view.AddAmbienteActivity"
+            android:label="@string/dao" >
+            
+        </activity>
+         <activity
+            android:name="br.edu.ifpb.view.MainActivityBanco"
+            android:label="@string/banco" >
             
         </activity>
         <activity
